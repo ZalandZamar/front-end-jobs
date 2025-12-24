@@ -2,14 +2,12 @@ import { useState } from "react";
 import { logIn } from "./functions/logIn";
 
 interface SignInFormProps {
-  setActiveForm: (value: "signIn" | "logIn" | null) => void;
   setIsLoggedIn: (value: boolean) => void;
+  // optional setter so parent can control which auth form is active
+  setActiveForm?: (value: "signIn" | "logIn" | null) => void;
 }
 
-export const LogInForm: React.FC<SignInFormProps> = ({
-  setActiveForm,
-  setIsLoggedIn,
-}) => {
+export const LogInForm: React.FC<SignInFormProps> = ({ setIsLoggedIn }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

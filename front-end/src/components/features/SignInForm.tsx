@@ -4,6 +4,8 @@ import { signIn } from "./functions/signIn";
 
 interface SignInFormProps {
   setIsLoggedIn: (value: boolean) => void;
+  // optional setter so parent can control which auth form is active
+  setActiveForm?: (value: "signIn" | "logIn" | null) => void;
 }
 
 export const SignInForm: React.FC<SignInFormProps> = ({ setIsLoggedIn }) => {
