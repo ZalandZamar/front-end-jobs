@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { logIn } from "./functions/logIn";
-import { UserInterface } from "./UserInterface";
 
 interface SignInFormProps {
   setActiveForm: (value: "signIn" | "logIn" | null) => void;
@@ -27,11 +26,6 @@ export const LogInForm: React.FC<SignInFormProps> = ({
     } else {
       alert("wrong credntials");
     }
-  };
-
-  const handleLogOut = () => {
-    localStorage.removeItem("token");
-    setActiveForm(null);
   };
 
   return (

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { userData } from "./functions/userData";
 import "./css/userInterface.css";
 import { CreateJob } from "./functions/CreateJob";
-import { UpdateJob } from "./functions/updateJob";
+import { UpdateJob } from "./UpdateJob.tsx";
 import { deleteJob } from "./functions/deleteJob";
 
 interface UserInterfaceProps {

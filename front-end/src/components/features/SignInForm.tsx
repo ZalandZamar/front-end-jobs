@@ -30,11 +30,6 @@ export const SignInForm: React.FC<SignInFormProps> = ({
     }
   };
 
-  const handleLogOut = () => {
-    localStorage.removeItem("token");
-    setActiveForm(null);
-  };
-
   return (
     <div className="container">
       <input
