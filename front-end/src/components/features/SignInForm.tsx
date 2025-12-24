@@ -3,14 +3,10 @@ import "./css/SignInForm.css";
 import { signIn } from "./functions/signIn";
 
 interface SignInFormProps {
-  setActiveForm: (value: "signIn" | "logIn" | null) => void;
   setIsLoggedIn: (value: boolean) => void;
 }
 
-export const SignInForm: React.FC<SignInFormProps> = ({
-  setActiveForm,
-  setIsLoggedIn,
-}) => {
+export const SignInForm: React.FC<SignInFormProps> = ({ setIsLoggedIn }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

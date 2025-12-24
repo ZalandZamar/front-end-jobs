@@ -45,16 +45,10 @@ export const AuthLogin = () => {
       )}
 
       {activeForm === "signIn" && !isLoggedIn && (
-        <SignInForm
-          setActiveForm={setActiveForm}
-          setIsLoggedIn={setIsLoggedIn}
-        />
+        <SignInForm setIsLoggedIn={setIsLoggedIn} />
       )}
       {activeForm === "logIn" && !isLoggedIn && (
-        <LogInForm
-          setActiveForm={setActiveForm}
-          setIsLoggedIn={setIsLoggedIn}
-        />
+        <LogInForm setIsLoggedIn={setIsLoggedIn} />
       )}
     </div>
   );

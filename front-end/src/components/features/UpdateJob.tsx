@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import "../css/updateJob.css";
+import "./css/updateJob.css";
 
 interface UpdateJobProps {
   selectedJob: any; // we’ll improve this later
