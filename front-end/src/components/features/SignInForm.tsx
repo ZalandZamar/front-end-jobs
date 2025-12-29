@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./css/SignInForm.css";
 import { signIn } from "./functions/signIn";
 
 interface SignInFormProps {
@@ -29,11 +28,11 @@ export const SignInForm: React.FC<SignInFormProps> = ({ setIsLoggedIn }) => {
   };
 
   return (
-    <div className="container">
+    <div className="flex flex-col mt-14">
       <input
         type="text"
         placeholder="Name"
-        className="name-input"
+        className="min-w-40 border py-2 px-3 font-medium outline-0 text-[18px] mb-3"
         value={name}
         onChange={(e) => {
           setName(e.target.value);
@@ -42,7 +41,7 @@ export const SignInForm: React.FC<SignInFormProps> = ({ setIsLoggedIn }) => {
       <input
         type="email"
         placeholder="Email"
-        className="email-input"
+        className="min-w-40 border py-2 px-3 font-medium outline-0 text-[18px] mb-3"
         value={email}
         onChange={(e) => {
           setEmail(e.target.value);
@@ -51,13 +50,16 @@ export const SignInForm: React.FC<SignInFormProps> = ({ setIsLoggedIn }) => {
       <input
         type="text"
         placeholder="Password"
-        className="password-input"
+        className="min-w-40 border py-2 px-3 font-medium outline-0 text-[18px] mb-3"
         value={password}
         onChange={(e) => {
           setPassword(e.target.value);
         }}
       />
-      <button className="sign-btn" onClick={handleSignIn}>
+      <button
+        className="bg-blue-500 max-w-28 py-2.5 text-white text-[16px] cursor-pointer"
+        onClick={handleSignIn}
+      >
         {isLoading ? "Loading" : "Sign in"}
       </button>
     </div>

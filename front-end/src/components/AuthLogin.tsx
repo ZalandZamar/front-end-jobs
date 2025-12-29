@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "./css/AuthLogin.css";
 import { SignInForm } from "./features/SignInForm";
 import { LogInForm } from "./features/LogInForm";
 import { UserInterface } from "./features/UserInterface";
@@ -27,18 +26,21 @@ export const AuthLogin = () => {
   }, []);
 
   return (
-    <div>
+    <div className="flex justify-center">
       {isLoggedIn && <UserInterface handleLogOut={handleLogOut} />}
 
       {!activeForm && !isLoggedIn && (
-        <div>
+        <div className="my-28">
           <button
-            className="sing-in-btn"
+            className="bg-blue-500 text-white border-0 p-3 border-r-4 ml-5 cursor-pointer"
             onClick={() => setActiveForm("signIn")}
           >
             Sign in
           </button>
-          <button className="log-in-btn" onClick={() => setActiveForm("logIn")}>
+          <button
+            className="bg-blue-500 text-white border-0 p-3 border-r-4 ml-5 cursor-pointer"
+            onClick={() => setActiveForm("logIn")}
+          >
             Log in
           </button>
         </div>

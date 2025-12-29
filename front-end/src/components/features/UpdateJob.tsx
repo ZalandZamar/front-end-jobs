@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import "./css/updateJob.css";
 
 interface UpdateJobProps {
   selectedJob: any; // we’ll improve this later
@@ -47,11 +46,12 @@ export const UpdateJob: React.FC<UpdateJobProps> = ({
   };
 
   return (
-    <div>
+    <div className="mt-32 flex flex-col">
       <input
         type="text"
         placeholder="company"
         value={company}
+        className="min-w-40 border py-2 px-3 font-medium outline-0 text-[18px] mb-3"
         onChange={(e) => {
           setCompany(e.target.value);
         }}
@@ -60,6 +60,7 @@ export const UpdateJob: React.FC<UpdateJobProps> = ({
         type="text"
         placeholder="position"
         value={position}
+        className="min-w-40 border py-2 px-3 font-medium outline-0 text-[18px] mb-3"
         onChange={(e) => {
           setPosition(e.target.value);
         }}
@@ -68,11 +69,17 @@ export const UpdateJob: React.FC<UpdateJobProps> = ({
         type="text"
         placeholder="status"
         value={status}
+        className="min-w-40 border py-2 px-3 font-medium outline-0 text-[18px] mb-3"
         onChange={(e) => {
           setStatus(e.target.value);
         }}
       />
-      <button onClick={updateUserJob}>Confirm Update</button>
+      <button
+        onClick={updateUserJob}
+        className="bg-green-500 max-w-40 py-2 px-3 text-white cursor-pointer"
+      >
+        Confirm Update
+      </button>
     </div>
   );
 };
